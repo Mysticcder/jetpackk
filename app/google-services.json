@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "434843955238",
+    "project_id": "ezra-mvvm-4ed05",
+    "storage_bucket": "ezra-mvvm-4ed05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434843955238:android:4ea21ebed108b61ba136e7",
+        "android_client_info": {
+          "package_name": "net.coding"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4h_JTvHQRsf95bUP2BkP6IIAtolHcqMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
