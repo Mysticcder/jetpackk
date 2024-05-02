@@ -9,7 +9,6 @@ import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
-
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomNavigation
@@ -44,6 +43,8 @@ import net.ezra.navigation.ROUTE_ABOUT
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.R
 import net.ezra.navigation.ROUTE_ADD_STUDENTS
+import net.ezra.navigation.ROUTE_SERVICES
+import net.ezra.navigation.ROUTE_SIGNUP
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -69,14 +70,15 @@ fun ServicesScreen(navController: NavHostController) {
 
                         Row(
                             modifier = Modifier
-                                .background(Color.White),
+                                .background(Color.Black),
 //                    verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.End
                         ) {
-                            Image(
-                                imageVector = Icons.Default.Notifications,
-                                contentDescription = ""
-                            )
+
+
+                            Spacer(modifier = Modifier.width(320.dp))
+
+                            Icon(imageVector = Icons.Default.Notifications, contentDescription = "")
                         }
 
 
@@ -112,7 +114,7 @@ fun ServicesScreen(navController: NavHostController) {
                             modifier = Modifier
                                 .fillMaxSize()
                         ) {
-                            Text(text = "Workout Program", color = Color.White, textAlign = TextAlign.Left)
+                            Text(text = "Workout Programs", color = Color.White, textAlign = TextAlign.Left)
 
                             Text(text = "See All", color = Color.Green, textAlign = TextAlign.End)
                         }
@@ -235,7 +237,7 @@ fun ServicesScreen(navController: NavHostController) {
                     Row(
                         modifier = Modifier
                             .size(width = 720.dp, height = 290.dp)
-                            .horizontalScroll(state = ScrollState(2))
+                            .horizontalScroll(state = ScrollState(1))
 
                     ) {
                         Card(
@@ -263,7 +265,9 @@ fun ServicesScreen(navController: NavHostController) {
                                 ){
                                     Text(text = "Full Body Workout", color = Color.White,
                                         fontSize = 25.sp)
+
                                     Spacer(modifier = Modifier.height(6.dp))
+
                                     Text(text = "24 Task", color = Color.White
                                     )
 
@@ -288,7 +292,7 @@ fun ServicesScreen(navController: NavHostController) {
                                     .fillMaxSize()
                             ) {
 
-                                Image(painter = painterResource(id = R.drawable.img_5),
+                                Image(painter = painterResource(id = R.drawable.img_6),
                                     contentDescription = null,
                                     contentScale = ContentScale.Crop,
                                     modifier = Modifier.matchParentSize())
@@ -314,7 +318,7 @@ fun ServicesScreen(navController: NavHostController) {
             }
 
         },
-        bottomBar = { BottomBar() }
+        bottomBar = { BottomBar(navController) }
     )
 }
 
@@ -324,15 +328,18 @@ fun ServicesScreen(navController: NavHostController) {
 
 
 @Composable
-fun BottomBar() {
+fun BottomBar(navController: NavHostController) {
 
     val selectedIndex = remember { mutableStateOf(0) }
     BottomNavigation(elevation = 10.dp) {
         BottomNavigationItem(icon = {
             Icon(imageVector = Icons.Default.Home,"")
         },
-            label = { Text(text = "Home") }, selected = (selectedIndex.value == 0), onClick = {
-                selectedIndex.value = 0
+            label = { Text(text = "Home") }, selected = (selectedIndex.value == 0),
+            onClick = {
+                navController.navigate(ROUTE_HOME) {
+                    popUpTo(ROUTE_HOME) { inclusive = true }
+                }
             })
         BottomNavigationItem(icon = {
             Icon(imageVector = Icons.Default.Favorite,"")
@@ -343,8 +350,11 @@ fun BottomBar() {
         BottomNavigationItem(icon = {
             Icon(imageVector = Icons.Default.Person, "")
         },
-            label = { Text(text = "Profile") }, selected = (selectedIndex.value == 2), onClick = {
-                selectedIndex.value = 2
+            label = { Text(text = "Profile") }, selected = (selectedIndex.value == 2),
+            onClick = {
+                navController.navigate(ROUTE_SIGNUP) {
+                    popUpTo(ROUTE_HOME) { inclusive = true }
+                }
             })
     }
 }
