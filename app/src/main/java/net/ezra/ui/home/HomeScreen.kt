@@ -42,7 +42,7 @@ import net.ezra.navigation.ROUTE_SERVICES
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AlexScreen(navController: NavHostController) {
+fun HomeScreen(navController: NavHostController) {
     Box {
         Column(
             modifier = Modifier.fillMaxHeight(),
@@ -85,6 +85,6 @@ fun AlexScreen(navController: NavHostController) {
 @Preview(showBackground = true)
 @Composable
 fun Preview() {
-    AlexScreen(rememberNavController())
+    HomeScreen(rememberNavController())
 }
 

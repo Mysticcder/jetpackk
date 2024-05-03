@@ -13,10 +13,10 @@ import net.ezra.ui.auth.LoginScreen
 import net.ezra.ui.auth.SignupScreen
 import net.ezra.ui.contact.ContactScreen
 import net.ezra.ui.evening.EveningScreen
-import net.ezra.ui.home.HomeScreen
 import net.ezra.ui.mit.MitScreen
 import net.ezra.ui.products.ProductsScreen
 import net.ezra.ui.services.ServicesScreen
+import net.ezra.ui.shop.HomeScreen
 import net.ezra.ui.shop.ShopScreen
 import net.ezra.ui.students.AddStudents
 

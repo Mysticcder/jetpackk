@@ -7,6 +7,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -45,7 +46,9 @@ import net.ezra.R
 import net.ezra.navigation.ROUTE_ADD_STUDENTS
 import net.ezra.navigation.ROUTE_SERVICES
 import net.ezra.navigation.ROUTE_SIGNUP
-
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import net.ezra.navigation.ROUTE_MIT
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -86,7 +89,7 @@ fun ServicesScreen(navController: NavHostController) {
                         Column(
                             modifier = Modifier
 //                                .size(width = 450.dp, height = 150.dp)
-                        ) {
+                         ) {
                             Card(modifier = Modifier
                                 .background(Color.DarkGray)
                                 .size(width = 500.dp, height = 98.dp),
@@ -244,8 +247,17 @@ fun ServicesScreen(navController: NavHostController) {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(top = 6.dp)
+                                .clickable {
+
+                                    navController.navigate(ROUTE_MIT) {
+                                        popUpTo(ROUTE_SERVICES) { inclusive = true }
+                                    }
+
+                                }
+
                                 .wrapContentHeight(align = Alignment.Top),
                             shape = RoundedCornerShape(15.dp)
+
 
                         ) {
                             Box(
@@ -331,7 +343,7 @@ fun ServicesScreen(navController: NavHostController) {
 fun BottomBar(navController: NavHostController) {
 
     val selectedIndex = remember { mutableStateOf(0) }
-    BottomNavigation(elevation = 10.dp) {
+    BottomNavigation(elevation = 10.dp, backgroundColor = Color.Black) {
         BottomNavigationItem(icon = {
             Icon(imageVector = Icons.Default.Home,"")
         },
