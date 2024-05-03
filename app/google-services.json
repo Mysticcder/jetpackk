@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "434843955238",
-    "project_id": "ezra-mvvm-4ed05",
-    "storage_bucket": "ezra-mvvm-4ed05.appspot.com"
+    "project_number": "892780401776",
+    "project_id": "afleko-mvvm",
+    "storage_bucket": "afleko-mvvm.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:434843955238:android:4ea21ebed108b61ba136e7",
+        "mobilesdk_app_id": "1:892780401776:android:b80c2e5f12d3b05d27d0b5",
         "android_client_info": {
           "package_name": "net.coding"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD4h_JTvHQRsf95bUP2BkP6IIAtolHcqMw"
+          "current_key": "AIzaSyCedMcCyz2ACqg-T7MYoyPYayNXS5DFpTw"
         }
       ],
       "services": {
