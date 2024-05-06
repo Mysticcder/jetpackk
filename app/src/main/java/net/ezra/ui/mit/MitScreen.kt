@@ -122,6 +122,7 @@ fun MitScreen(navController: NavHostController) {
                                 return "%02d:%02d".format(minutes, remainingSeconds)
                             }
 
+
                         }
 
                         Spacer(modifier = Modifier.height(15.dp))
@@ -147,6 +148,227 @@ fun MitScreen(navController: NavHostController) {
                         }
 
                         Spacer(modifier = Modifier.height(15.dp))
+
+
+                        Card(modifier = Modifier
+                            .size(width = 500.dp, height = 98.dp),
+
+                            ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_9),
+                                contentDescription = "Nusa Penida",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier
+                                    .size(50.dp),
+                            )
+                            Text(text = "Russian Twist",
+                                textAlign = TextAlign.Center, color = Color.White)
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(text = "x20")
+
+
+                        }
+
+                        Spacer(modifier = Modifier.height(15.dp))
+
+                        Card(modifier = Modifier
+                            .size(width = 500.dp, height = 98.dp),
+
+                            ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_12),
+                                contentDescription = "Nusa Penida",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier
+                                    .size(50.dp),
+                            )
+                            Text(text = "Planks",
+                                textAlign = TextAlign.Center, color = Color.White)
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(text = "x20")
+
+
+                        }
+
+                        Spacer(modifier = Modifier.height(15.dp))
+
+                        Card(modifier = Modifier
+                            .size(width = 500.dp, height = 98.dp),
+
+                            ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_9),
+                                contentDescription = "Nusa Penida",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier
+                                    .size(50.dp),
+                            )
+                            Text(text = "Push-Ups",
+                                textAlign = TextAlign.Center, color = Color.White)
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(text = "x20")
+
+
+                        }
+
+                        Spacer(modifier = Modifier.height(15.dp))
+
+                        Card(modifier = Modifier
+                            .size(width = 500.dp, height = 98.dp),
+
+                            ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_13),
+                                contentDescription = "Nusa Penida",
+                                contentScale = ContentScale.FillWidth
+                                ,
+                                modifier = Modifier
+                                    .size(50.dp),
+                            )
+                            Text(text = "Incline Push-Ups",
+                                textAlign = TextAlign.Center)
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(text = "x20")
+
+
+                        }
+
+                        Spacer(modifier = Modifier.height(15.dp))
+
+                        Card(modifier = Modifier
+                            .size(width = 500.dp, height = 98.dp),
+
+                            ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_11),
+                                contentDescription = "Nusa Penida",
+                                contentScale = ContentScale.FillWidth,
+                                modifier = Modifier
+                                    .size(50.dp),
+                            )
+                            Text(text = "Mountain Climber",
+                                textAlign = TextAlign.Center)
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(text = "x16")
+
+
+                        }
+
+                        Spacer(modifier = Modifier.height(15.dp))
+
+                        Card(modifier = Modifier
+                            .size(width = 500.dp, height = 98.dp),
+
+                            ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_14),
+                                contentDescription = "Nusa Penida",
+                                contentScale = ContentScale.FillWidth,
+                                modifier = Modifier
+                                    .size(50.dp),
+                            )
+                            Text(text = "Side Planks",
+                                textAlign = TextAlign.Center)
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(text = "x16")
+
+
+                        }
+
+
+                        Spacer(modifier = Modifier.height(15.dp))
+
+                        Card(modifier = Modifier
+                            .size(width = 500.dp, height = 98.dp),
+
+                            ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_15),
+                                contentDescription = "Nusa Penida",
+                                contentScale = ContentScale.FillWidth,
+                                modifier = Modifier
+                                    .size(50.dp),
+                            )
+                            Text(text = "Squats",
+                                textAlign = TextAlign.Center)
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(text = "x16")
+
+
+                        }
+
+                        Spacer(modifier = Modifier.height(15.dp))
+
+                        Card(modifier = Modifier
+                            .size(width = 500.dp, height = 98.dp),
+
+                            ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_16),
+                                contentDescription = "Nusa Penida",
+                                contentScale = ContentScale.FillWidth,
+                                modifier = Modifier
+                                    .size(50.dp),
+                            )
+                            Text(text = "Lunges",
+                                textAlign = TextAlign.Center)
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(text = "x16")
+
+
+                        }
+
+                        Spacer(modifier = Modifier.height(15.dp))
+
+                        Card(modifier = Modifier
+                            .size(width = 500.dp, height = 98.dp),
+
+                            ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_17),
+                                contentDescription = "Nusa Penida",
+                                contentScale = ContentScale.FillWidth,
+                                modifier = Modifier
+                                    .size(50.dp),
+                            )
+                            Text(text = "Burpee",
+                                textAlign = TextAlign.Center)
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(text = "x16")
+
+
+                        }
+
+                        Spacer(modifier = Modifier.height(15.dp))
+
+                        Card(modifier = Modifier
+                            .size(width = 500.dp, height = 98.dp),
+
+                            ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_18),
+                                contentDescription = "Nusa Penida",
+                                contentScale = ContentScale.FillWidth,
+                                modifier = Modifier
+                                    .size(50.dp),
+                            )
+                            Text(text = "Tricep Dips",
+                                textAlign = TextAlign.Center)
+                            Spacer(modifier = Modifier.height(6.dp))
+                            Text(text = "x16")
+
+
+                        }
+
+
+
+
+
+
+
+
+
+
 
 
 
