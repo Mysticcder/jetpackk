@@ -48,7 +48,9 @@ import net.ezra.navigation.ROUTE_SERVICES
 import net.ezra.navigation.ROUTE_SIGNUP
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import net.ezra.navigation.ROUTE_CONTACT
 import net.ezra.navigation.ROUTE_MIT
+import net.ezra.navigation.ROUTE_UPLOAD
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -135,7 +137,7 @@ fun ServicesScreen(navController: NavHostController) {
 
                             Button(
                                 onClick = {
-                                    navController.navigate(ROUTE_ADD_STUDENTS) {
+                                    navController.navigate(net.ezra.navigation.ROUTE_MIT) {
                                         popUpTo(ROUTE_HOME) { inclusive = true }
                                     }
                                 },
@@ -154,7 +156,7 @@ fun ServicesScreen(navController: NavHostController) {
 
                             Button(
                                 onClick = {
-                                    navController.navigate(ROUTE_ABOUT) {
+                                    navController.navigate(ROUTE_MIT) {
                                         popUpTo(ROUTE_HOME) { inclusive = true }
                                     }
                                 },
@@ -213,7 +215,7 @@ fun ServicesScreen(navController: NavHostController) {
 
                             Button(
                                 onClick = {
-                                    navController.navigate(ROUTE_ABOUT) {
+                                    navController.navigate(ROUTE_CONTACT) {
                                         popUpTo(ROUTE_HOME) { inclusive = true }
                                     }
                                 },

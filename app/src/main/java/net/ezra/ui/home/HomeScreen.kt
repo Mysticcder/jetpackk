@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -56,7 +57,7 @@ fun HomeScreen(navController: NavHostController) {
                     .weight(2f, false),
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.img_4),
+                    painter = painterResource(id = R.drawable.img),
                     contentDescription = "Logo",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
@@ -71,10 +72,11 @@ fun HomeScreen(navController: NavHostController) {
                     },
                     modifier = Modifier
                         .padding(vertical = 2.dp)
+                        .fillMaxWidth()
                         .align(alignment = Alignment.CenterHorizontally),
-                    colors = ButtonDefaults.buttonColors(Color.Green)
+                    colors = ButtonDefaults.buttonColors(Color.Yellow)
                 ) {
-                    Text("Get Started")
+                    Text("Get Started", color = Color.Black)
                 }
             }
 

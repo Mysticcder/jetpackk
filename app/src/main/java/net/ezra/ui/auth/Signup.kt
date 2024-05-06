@@ -22,7 +22,9 @@ import androidx.constraintlayout.compose.Dimension
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import net.ezra.R
+import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_LOGIN
+import net.ezra.navigation.ROUTE_SERVICES
 import net.ezra.navigation.ROUTE_SIGNUP
 import net.ezra.ui.theme.AppTheme
 import net.ezra.ui.theme.spacing
@@ -122,6 +124,10 @@ fun SignupScreen(navController: NavHostController) {
 
         Button(
             onClick = {
+                navController.navigate(ROUTE_SERVICES) {
+                    popUpTo(ROUTE_HOME) { inclusive = true }
+                }
+
 
             },
             modifier = Modifier.constrainAs(refButtonSignup) {
