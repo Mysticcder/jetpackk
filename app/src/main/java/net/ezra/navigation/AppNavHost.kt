@@ -8,14 +8,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import net.ezra.ui.SplashScreen
-import net.ezra.ui.VIDEOS.VideoListScreen
-import net.ezra.ui.VIDEOS.VideoUploadScreen
+
+//import net.ezra.ui.VIDEOS.VideoListScreen
+//import net.ezra.ui.VIDEOS.VideoUploadScreen
 import net.ezra.ui.about.AboutScreen
 import net.ezra.ui.auth.LoginScreen
 import net.ezra.ui.auth.SignupScreen
 import net.ezra.ui.evening.EveningScreen
 import net.ezra.ui.mit.MitScreen
-import net.ezra.ui.products.ProductsScreen
+//import net.ezra.ui.products.ProductsScreen
 import net.ezra.ui.services.ServicesScreen
 import net.ezra.ui.shop.HomeScreen
 import net.ezra.ui.shop.ShopScreen
@@ -74,9 +75,9 @@ fun AppNavHost(
             ShopScreen(navController)
         }
 
-        composable(ROUTE_PRODUCTS) {
-            ProductsScreen(navController)
-        }
+//        composable(ROUTE_PRODUCTS) {
+//            ProductsScreen(navController)
+//        }
 
         composable(ROUTE_EVENING) {
             EveningScreen(navController)
@@ -85,14 +86,14 @@ fun AppNavHost(
         composable(ROUTE_SPLASH) {
             SplashScreen(navController)
         }
+//
+//        composable(ROUTE_VIEWV) {
+//            VideoListScreen(navController)
+//        }
 
-        composable(ROUTE_VIEWV) {
-            VideoListScreen(navController)
-        }
-
-        composable(ROUTE_UPLOAD) {
-            VideoUploadScreen(navController)
-        }
+//        composable(ROUTE_UPLOAD) {
+//            VideoUploadScreen(navController)
+//        }
 
 
 

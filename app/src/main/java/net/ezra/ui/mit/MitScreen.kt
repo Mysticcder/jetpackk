@@ -18,6 +18,7 @@ import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -35,30 +36,31 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.em
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
-import net.ezra.R
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import net.ezra.navigation.ROUTE_ABOUT
+import net.ezra.R
 import net.ezra.navigation.ROUTE_HOME
-import net.ezra.navigation.ROUTE_SERVICES
+import net.ezra.navigation.ROUTE_VIEWV
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -110,7 +112,6 @@ fun MitScreen(navController: NavHostController) {
                                     .padding(10.dp)
                             ) {
 
-
                                 Image(
                                     painter = painterResource(id = R.drawable.img_8),
                                     contentDescription = "Nusa Penida",
@@ -118,39 +119,25 @@ fun MitScreen(navController: NavHostController) {
                                     modifier = Modifier
                                         .size(100.dp),
                                 )
-                                Column {
 
+                                Column {
 
                                     Text(
                                         text = "Jumping Jacks",
                                         color = Color.Black,
+                                        fontWeight = FontWeight.W500,
+                                        textAlign = TextAlign.Start)
+
+                                    TimerApp()
 
 
-                                        )
+                                }
 
-                            }
+
+
                         }
 
-
-                            @Composable
-                            fun startTimer(initialTime: Long, onUpdate: (Long) -> Unit) {
-                                LaunchedEffect(Unit) {
-                                    var startTime = System.currentTimeMillis() - initialTime
-                                    while (true) {
-                                        val currentTime = System.currentTimeMillis()
-                                        val elapsedTime = currentTime - startTime
-                                        onUpdate(elapsedTime)
-                                        delay(1000) // Update every second
-                                    }
-                                }
-                            }
-
-                            fun formatTime(milliseconds: Long): String {
-                                val seconds = milliseconds / 1000
-                                val minutes = seconds / 60
-                                val remainingSeconds = seconds % 60
-                                return "%02d:%02d".format(minutes, remainingSeconds)
-                            }
+                            
 
 
                         }
@@ -184,11 +171,12 @@ fun MitScreen(navController: NavHostController) {
                                     Text(
                                         text = "Abdominal Crunches",
                                         color = Color.Black,
+                                        fontWeight = FontWeight.W500,
 
 
                                         )
                                     Spacer(modifier = Modifier.height(6.dp))
-                                    Text(text = "x16")
+                                    Text(text = "x12")
 
                                 }
 
@@ -224,11 +212,12 @@ fun MitScreen(navController: NavHostController) {
                                     Text(
                                         text = "Russian Twist", 
                                             color = Color.Black,
+                                        fontWeight = FontWeight.W500,
 
                                             
                                     )
                                     Spacer(modifier = Modifier.height(6.dp))
-                                    Text(text = "x16")
+                                    Text(text = "x32")
                                 }
 
                             }
@@ -262,6 +251,7 @@ fun MitScreen(navController: NavHostController) {
                                     Text(
                                         text = "Planks", 
                                             color = Color.Black,
+                                        fontWeight = FontWeight.W500,
 
                                             
                                     )
@@ -301,7 +291,9 @@ fun MitScreen(navController: NavHostController) {
 
 
                                     Text(
-                                        text = "Push-Ups", color = Color.Black,
+                                        text = "Push-Ups",
+                                        color = Color.Black,
+                                        fontWeight = FontWeight.W500,
 
                                             
                                     )
@@ -342,6 +334,7 @@ fun MitScreen(navController: NavHostController) {
                                     Text(
                                         text = "Incline Push-Ups", 
                                             color = Color.Black,
+                                        fontWeight = FontWeight.W500,
 
                                             
                                     )
@@ -382,6 +375,7 @@ fun MitScreen(navController: NavHostController) {
                                     Text(
                                         text = "Mountain Climber", 
                                             color = Color.Black,
+                                        fontWeight = FontWeight.W500,
 
 
                                             )
@@ -423,6 +417,7 @@ fun MitScreen(navController: NavHostController) {
                                     Text(
                                         text = "Side Planks",
                                             color = Color.Black,
+                                        fontWeight = FontWeight.W500,
 
 
                                             
@@ -465,6 +460,7 @@ fun MitScreen(navController: NavHostController) {
                                     Text(
                                         text = "Squats", 
                                         color = Color.Black,
+                                        fontWeight = FontWeight.W500,
 
 
                                             
@@ -506,6 +502,7 @@ fun MitScreen(navController: NavHostController) {
                                     Text(
                                         text = "Lunges", 
                                             color = Color.Black,
+                                        fontWeight = FontWeight.W500,
 
 
                                             
@@ -547,6 +544,7 @@ fun MitScreen(navController: NavHostController) {
                                     Text(
                                         text = "Burpee", 
                                             color = Color.Black,
+                                        fontWeight = FontWeight.W500,
 
 
                                             
@@ -587,6 +585,7 @@ fun MitScreen(navController: NavHostController) {
                                     Text(
                                         text = "Tricep Dips", style = TextStyle(
                                             color = Color.Black,
+                                            fontWeight = FontWeight.W500,
 
 
                                             )
@@ -599,7 +598,7 @@ fun MitScreen(navController: NavHostController) {
                             Row {
                                 Button(
                                     onClick = {
-                                        navController.navigate(ROUTE_SERVICES) {
+                                        navController.navigate(ROUTE_VIEWV) {
                                             popUpTo(ROUTE_HOME) { inclusive = true }
                                         }
                                     },
@@ -608,7 +607,7 @@ fun MitScreen(navController: NavHostController) {
                                         .fillMaxWidth(),
                                     colors = ButtonDefaults.buttonColors(Color.Blue)
                                 ) {
-                                    Text("Start", color = Color.Black)
+                                    Text("Start", color = Color.Black,fontWeight = FontWeight.W500,)
                                 }
                             }
 
@@ -653,4 +652,77 @@ fun MitScreen(navController: NavHostController) {
 fun MitScreenPreviewLight() {
     MitScreen(rememberNavController())
 
+}
+
+
+
+
+
+
+
+@Composable
+fun TimerApp() {
+    var time by remember { mutableStateOf(0) }
+    var isRunning by remember { mutableStateOf(false) }
+    var job by remember { mutableStateOf<Job?>(null) }
+
+    Column(
+        modifier = Modifier
+            .padding(6.dp),
+        verticalArrangement = Arrangement.Bottom,
+        horizontalAlignment = Alignment.End
+    ) {
+        TimerDisplay(time)
+        Spacer(modifier = Modifier.height(6.dp))
+        Button(
+            modifier = Modifier.background(color = Color.Transparent),
+            onClick = {
+                isRunning = !isRunning
+                if (isRunning) {
+                    job = CoroutineScope(Dispatchers.Main).launch {
+                        while (isActive) {
+                            delay(1000)
+                            time++
+                        }
+                    }
+                } else {
+                    job?.cancel()
+                }
+            }
+        ) {
+            Text(text = if (isRunning) "Stop" else "Start")
+        }
+        Spacer(modifier = Modifier.height(6.dp))
+        Button(
+            onClick = {
+                time = 0
+                isRunning = false
+                job?.cancel()
+            }
+        ) {
+            Text(text = "Reset")
+        }
+    }
+}
+
+@Composable
+fun TimerDisplay(time: Int) {
+    Row(
+        modifier = Modifier
+            .size(180.dp)
+
+            .background(Color.Transparent),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            text = formatTime(time),
+        )
+    }
+}
+
+fun formatTime(time: Int): String {
+    val seconds = time % 60
+    val minutes = (time / 60) % 60
+    val hours = time / 3600
+    return String.format("%02d:%02d:%02d", hours, minutes, seconds)
 }

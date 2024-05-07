@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "892780401776",
-    "project_id": "afleko-mvvm",
-    "storage_bucket": "afleko-mvvm.appspot.com"
+    "project_number": "715279540501",
+    "project_id": "afleko-alex",
+    "storage_bucket": "afleko-alex.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:892780401776:android:b80c2e5f12d3b05d27d0b5",
+        "mobilesdk_app_id": "1:715279540501:android:ebb83a678353d7094e091c",
         "android_client_info": {
-          "package_name": "net.coding"
+          "package_name": "net.alex"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCedMcCyz2ACqg-T7MYoyPYayNXS5DFpTw"
+          "current_key": "AIzaSyAOGbE7nzPD1lJahOmKWpRDIO7CoPHQzbI"
         }
       ],
       "services": {

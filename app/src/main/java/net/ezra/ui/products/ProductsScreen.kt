@@ -1,71 +1,98 @@
 package net.ezra.ui.products
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import net.ezra.navigation.ROUTE_ABOUT
-import net.ezra.navigation.ROUTE_HOME
-import net.ezra.navigation.ROUTE_MIT
-import net.ezra.navigation.ROUTE_SERVICES
 import net.ezra.R
-import net.ezra.navigation.ROUTE_CONTACT
-import net.ezra.navigation.ROUTE_PRODUCTS
-import net.ezra.navigation.ROUTE_SHOP
+
+
 
 @Composable
-fun ProductsScreen(navController: NavHostController) {
+fun ProfileScreen(navController: NavHostController) {
 
     Column(
         modifier = Modifier
-            .fillMaxWidth()
-            .wrapContentHeight()
-            .padding(10.dp)
-            .padding(top = 10.dp)
-
-    ){
-        Text(text = "this is the product screen")
-
-        Text(
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        // Profile Image
+        Image(
+            painter = painterResource(id = R.drawable.img_19),
+            contentDescription = "Profile Picture",
             modifier = Modifier
-                .clickable {
-                    navController.navigate(ROUTE_HOME) {
-                        popUpTo(ROUTE_PRODUCTS) { inclusive = true }
-                    }
-                },
-            text = "Go home", color = Color(0xff23D342)
+                .size(120.dp)
+                .clip(CircleShape),
+            contentScale = ContentScale.Crop
         )
 
-        Image(
-            painter = painterResource(id = R.drawable.logo),
-            contentDescription =null,
+        Spacer(modifier = Modifier.height(16.dp))
 
-            colorFilter = ColorFilter.tint(Color.Green)
+        // User Name
+        Text(
+            text = "John Doe",
+            style = MaterialTheme.typography.headlineMedium,
+            fontWeight = FontWeight.Bold
+        )
 
-            )
+        Spacer(modifier = Modifier.height(8.dp))
 
+        // User Email
+        Text(
+            text = "john.doe@example.com",
+            style = MaterialTheme.typography.bodyMedium,
+            color = Color.Gray
+        )
 
+        Spacer(modifier = Modifier.height(16.dp))
 
+        // Other profile information
+        Text(
+            text = "Bio: ",
+            style = MaterialTheme.typography.bodySmall,
+        )
 
+        Text(
+            text = "Location: ",
+            style = MaterialTheme.typography.bodySmall,
+        )
+
+        // Add more profile information as needed
     }
-
 }
+
+
+
+
+
+
+
+
+
+
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewLight() {
-    ProductsScreen(rememberNavController())
+    ProfileScreen(rememberNavController())
 }
 
