@@ -83,7 +83,8 @@ fun ServicesScreen(navController: NavHostController) {
 
                             Spacer(modifier = Modifier.width(320.dp))
 
-                            Icon(imageVector = Icons.Default.Notifications, contentDescription = "")
+                            Icon(imageVector = Icons.Default.Notifications,
+                                contentDescription = "", tint = androidx.compose.ui.graphics.Color.Companion.White)
                         }
 
 
@@ -247,11 +248,12 @@ fun ServicesScreen(navController: NavHostController) {
                     ) {
                         Card(
                             modifier = Modifier
+                                .size(width = 350.dp , height = 250.dp)
                                 .fillMaxWidth()
                                 .padding(top = 6.dp)
                                 .clickable {
 
-                                    navController.navigate(ROUTE_MIT) {
+                                    navController.navigate(net.ezra.navigation.ROUTE_MIT) {
                                         popUpTo(ROUTE_SERVICES) { inclusive = true }
                                     }
 
@@ -278,7 +280,7 @@ fun ServicesScreen(navController: NavHostController) {
                                     verticalAlignment = Alignment.Bottom
                                 ){
                                     Text(text = "Full Body Workout", color = Color.White,
-                                        fontSize = 25.sp)
+                                        fontSize = 25.sp, textAlign = androidx.compose.ui.text.style.TextAlign.Companion.Left)
 
                                     Spacer(modifier = Modifier.height(6.dp))
 

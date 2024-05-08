@@ -1,6 +1,5 @@
 package net.ezra.ui.auth
 
-import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -30,7 +29,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import net.ezra.R
 import net.ezra.navigation.ROUTE_HOME
-import net.ezra.navigation.ROUTE_LOGIN
 import net.ezra.navigation.ROUTE_PRODUCTS
 import net.ezra.navigation.ROUTE_SIGNUP
 import net.ezra.ui.theme.spacing
@@ -155,7 +153,7 @@ fun SignupScreen(navController: NavHostController) {
                     end.linkTo(parent.end, spacing.extraLarge)
                 }
                 .clickable {
-                    navController.navigate(ROUTE_LOGIN) {
+                    navController.navigate(ROUTE_PRODUCTS) {
                         popUpTo(ROUTE_SIGNUP) { inclusive = true }
                     }
                 },
@@ -168,7 +166,7 @@ fun SignupScreen(navController: NavHostController) {
     }
 }
 
-@Preview(showBackground = true, uiMode = UI_MODE_NIGHT_NO)
+@Preview(showBackground = true)
 @Composable
 fun SignupScreenPreviewLight() {
     SignupScreen(rememberNavController())
