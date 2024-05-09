@@ -20,13 +20,13 @@ import net.ezra.ui.mit.MitScreen
 import net.ezra.ui.services.ServicesScreen
 import net.ezra.ui.shop.HomeScreen
 import net.ezra.ui.shop.ShopScreen
-import net.ezra.ui.exercises.JumpingJackScreen
+//import net.ezra.ui.exercises.JumpingJackScreen
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUTE_SPLASH
+    startDestination: String = net.ezra.navigation.ROUTE_SPLASH
 
 
 ) {
@@ -96,9 +96,9 @@ fun AppNavHost(
 //            VideoUploadScreen(navController)
 //        }
 
-        composable(ROUTE_JUMP) {
-            net.ezra.ui.exercises.JumpingJackScreen(navController)
-        }
+//        composable(ROUTE_JUMP) {
+//            net.ezra.ui.exercises.JumpingJackScreen(navController)
+//        }
 
 
 
