@@ -1,25 +1,9 @@
-//
-//import android.annotation.SuppressLint
-//import android.widget.VideoView
-//import androidx.compose.foundation.background
-//import androidx.compose.foundation.layout.*
-//import androidx.compose.foundation.lazy.LazyColumn
-//import androidx.compose.foundation.lazy.items
-//import androidx.compose.material.*
-//import androidx.compose.runtime.*
-//import androidx.compose.ui.Modifier
-//import androidx.compose.ui.graphics.Color
-//import androidx.compose.ui.platform.LocalContext
-//import androidx.compose.ui.unit.dp
-//import androidx.compose.ui.viewinterop.AndroidView
-//import androidx.core.net.toUri
-//import androidx.navigation.NavController
-//import androidx.navigation.compose.rememberNavController
-//import com.google.firebase.firestore.ktx.firestore
-//import com.google.firebase.ktx.Firebase
-//import kotlinx.coroutines.launch
-//import kotlinx.coroutines.tasks.await
-//
+package net.ezra.ui.students
+
+
+
+
+
 //@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 //@Composable
 //fun VideoListScreen(navController: NavController) {

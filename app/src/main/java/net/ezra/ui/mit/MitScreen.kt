@@ -62,8 +62,9 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import net.ezra.R
 import net.ezra.navigation.ROUTE_HOME
+import net.ezra.navigation.ROUTE_JUMP
+import net.ezra.navigation.ROUTE_MIT
 import net.ezra.navigation.ROUTE_SERVICES
-import net.ezra.ui.services.BottomBar
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -126,7 +127,9 @@ fun MitScreen(navController: NavHostController) {
 
                         Card(
                             modifier = Modifier
-                                .clickable { }
+                                .clickable {   navController.navigate(ROUTE_JUMP) {
+                                    popUpTo(ROUTE_MIT) { inclusive = true }
+                                } }
                                 .size(width = 500.dp, height = 98.dp),
 
                             ) {
@@ -279,9 +282,10 @@ fun MitScreen(navController: NavHostController) {
 
 
                                         )
+                                    TimerApp()
                                     Spacer(modifier = Modifier.height(6.dp))
 
-                                    Text(text = "x20")
+                                    Text(text = "")
                                 }
                             }
 
@@ -631,45 +635,10 @@ fun MitScreen(navController: NavHostController) {
 
 
         },
-        bottomBar = { BottomBar(navController) }
+bottomBar = { BottomBar(navController)}
 
-
-
-
-    )
-
-
-
-
-    @Composable
-    fun BottomBar(navController: NavHostController) {
-        Button(
-            onClick = {
-                navController.navigate(ROUTE_SERVICES) {
-                    popUpTo(ROUTE_HOME) { inclusive = true }
-                }
-            },
-            modifier = Modifier
-                .padding(20.dp)
-                .fillMaxWidth(),
-//            .align(alignment = Alignment.CenterHorizontally),
-            colors = ButtonDefaults.buttonColors(Color.Blue)
-        ) {
-            Text("Start", color = Color.White)
-        }
-    }
-
+        )
 }
-
-
-
-
-
-
-
-
-
-
 
 
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
@@ -750,3 +719,25 @@ fun formatTime(time: Int): String {
     val minutes = (time / 60) % 60
     return String.format("%02d:%02d", minutes, seconds)
 }
+
+
+
+@Composable
+fun BottomBar(navController: NavHostController) {
+    Button(
+        onClick = {
+            navController.navigate(ROUTE_SERVICES) {
+                popUpTo(ROUTE_HOME) { inclusive = true }
+            }
+        },
+        modifier = Modifier
+            .padding(20.dp)
+            .fillMaxWidth(),
+//            .align(alignment = Alignment.CenterHorizontally),
+        colors = ButtonDefaults.buttonColors(Color.Blue)
+    ) {
+        Text("Start", color = Color.White)
+    }
+}
+//
+//

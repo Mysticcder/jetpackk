@@ -334,7 +334,7 @@ fun ServicesScreen(navController: NavHostController) {
             }
 
         },
-        bottomBar = { BottomBar(navController) }
+        bottomBar = { SottomBar(navController) }
     )
 }
 
@@ -344,7 +344,7 @@ fun ServicesScreen(navController: NavHostController) {
 
 
 @Composable
-fun BottomBar(navController: NavHostController) {
+fun SottomBar(navController: NavHostController) {
 
     val selectedIndex = remember { mutableStateOf(0) }
     BottomNavigation(elevation = 10.dp, backgroundColor = Color.Black) {

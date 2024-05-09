@@ -11,15 +11,16 @@ import net.ezra.ui.SplashScreen
 
 //import net.ezra.ui.VIDEOS.VideoListScreen
 //import net.ezra.ui.VIDEOS.VideoUploadScreen
-import net.ezra.ui.about.AboutScreen
+//import net.ezra.ui.Registration.Registration
 import net.ezra.ui.auth.LoginScreen
-import net.ezra.ui.auth.SignupScreen
+import net.ezra.ui.auth.SignUpScreen
 import net.ezra.ui.evening.EveningScreen
 import net.ezra.ui.mit.MitScreen
 //import net.ezra.ui.products.ProductsScreen
 import net.ezra.ui.services.ServicesScreen
 import net.ezra.ui.shop.HomeScreen
 import net.ezra.ui.shop.ShopScreen
+import net.ezra.ui.exercises.JumpingJackScreen
 
 @Composable
 fun AppNavHost(
@@ -41,12 +42,12 @@ fun AppNavHost(
 
 
         composable(ROUTE_LOGIN) {
-            LoginScreen(navController)
+            LoginScreen(navController = navController){}
         }
 
 
         composable(ROUTE_SIGNUP) {
-            SignupScreen(navController)
+            net.ezra.ui.auth.SignUpScreen(navController = navController){}
         }
 
 
@@ -55,9 +56,9 @@ fun AppNavHost(
         }
 
 
-        composable(ROUTE_ABOUT) {
-            AboutScreen(navController)
-        }
+//        composable(net.ezra.navigation.ROUTE_ABOUT) {
+//            AboutScreen(navController)
+//        }
 
         composable(ROUTE_SERVICES) {
             ServicesScreen(navController)
@@ -75,9 +76,9 @@ fun AppNavHost(
             ShopScreen(navController)
         }
 
-//        composable(ROUTE_PRODUCTS) {
-//            ProductsScreen(navController)
-//        }
+        composable(net.ezra.navigation.ROUTE_PROFILE) {
+            net.ezra.ui.Products.ProfileScreen(navController)
+        }
 
         composable(ROUTE_EVENING) {
             EveningScreen(navController)
@@ -86,14 +87,18 @@ fun AppNavHost(
         composable(ROUTE_SPLASH) {
             SplashScreen(navController)
         }
-//
-//        composable(ROUTE_VIEWV) {
+
+//        composable(ROUTE_VIEW) {
 //            VideoListScreen(navController)
 //        }
 
 //        composable(ROUTE_UPLOAD) {
 //            VideoUploadScreen(navController)
 //        }
+
+        composable(ROUTE_JUMP) {
+            net.ezra.ui.exercises.JumpingJackScreen(navController)
+        }
 
 
 
